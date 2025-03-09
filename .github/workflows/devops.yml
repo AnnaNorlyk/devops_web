@@ -38,7 +38,8 @@ jobs:
           docker build \
             -t ghcr.io/${{ env.REPO_NAME }}:staging \  
             -t ghcr.io/${{ env.REPO_NAME }}:${{ steps.semver-app.outputs.version }} \  
-            -f DevOpsWebApplication/Dockerfile .
+            -f DevOpsWebApplication/Dockerfile DevOpsWebApplication/
+
 
           docker push ghcr.io/${{ env.REPO_NAME }} --all-tags  
 
