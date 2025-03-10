@@ -14,7 +14,7 @@ WORKDIR /src
 COPY ["DevOpsWebApplication/DevOpsWebApplication.csproj", "DevOpsWebApplication/"]
 RUN dotnet restore "./DevOpsWebApplication/DevOpsWebApplication.csproj"
 COPY . /source
-WORKDIR "/source"
+WORKDIR /src/DevOpsWebApplication
 RUN dotnet build "./DevOpsWebApplication.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
